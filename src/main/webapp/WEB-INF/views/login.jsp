@@ -16,5 +16,59 @@
 </head>
 <body>
 	
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="#">GDJ21</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	      	<li><a href="/">Home</a></li>
+	      	<li class="active"><a href="#">Login</a></li>
+	      </ul>
+	      <form class="navbar-form navbar-right" role="search">
+	        <div class="form-group input-group">
+	          <input type="text" class="form-control" placeholder="검색..">
+	          <span class="input-group-btn">
+	            <button class="btn btn-default" type="button">
+	              <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	          </span>        
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      		<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	  
+	<div class="container">    
+		<h1 class="text-center">Login</h1>
+		<form action="/login" method="post">
+			<div class="form-group">
+		    	<label class="control-label" for="username">User Name:</label>
+		      	<input type="text" class="form-control" id="username" name="username" required="required" placeholder="계정을 입력하세요.">
+		  	</div>
+		  	<div class="form-group">
+		    	<label class="control-label" for="password">Password:</label>
+		      	<input type="password" class="form-control" id="password" name="password" required="required" placeholder="비밀번호를 입력하세요.">
+		  	</div>
+		  	<div class="form-group">
+		      	<button type="submit" class="btn btn-success btn-block font-default">로그인</button>
+			</div>
+		</form>			  
+    </div>
+	    
+	<footer class="container-fluid text-center">
+	  <p>Copyright ⓒ GooDee Academy. All rights reserved.</p>
+	</footer>
+	
 </body>
 </html>

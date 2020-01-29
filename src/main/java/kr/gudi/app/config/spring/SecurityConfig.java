@@ -10,8 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.rememberme.AbstractRememberMeServices;
 
-@Configuration
-@EnableWebSecurity
+@Configuration @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
@@ -19,12 +18,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		    .csrf().disable()
 		    .authorizeRequests()
-				.antMatchers("/", "/res/**", "/lib/**", "/FileDownload/**", "/FileUpload").permitAll()
+//				.antMatchers("/", "/res/**", "/lib/**", "/FileDownload/**", "/FileUpload").permitAll()
 //				.antMatchers("/admin").hasAnyRole("ADMIN")
-				.anyRequest().authenticated()
+		    	.anyRequest().permitAll()
+//		    	.anyRequest().authenticated()
 				.and()
 			.formLogin()
-//				.loginPage("/login")
+				.loginPage("/login")
 //				.successForwardUrl("/security/success")
 //				.failureForwardUrl("/security/error")
 				.permitAll()
@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 //		auth.jdbcAuthentication()
 //          .dataSource(dataSource);
-//		
+		
 //		auth.jdbcAuthentication()
 //	        .dataSource(dataSource)
 //	        .usersByUsernameQuery("select num, password, enabled from b_users where email = ?")

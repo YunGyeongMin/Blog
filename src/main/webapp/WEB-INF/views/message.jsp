@@ -17,5 +17,55 @@
 </head>
 <body>
 	
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="#">GDJ21</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	      	<li><a href="/">Home</a></li>
+	      	<li><a href="/myList">고세민</a></li>
+	      	<li class="active"><a href="#">Message</a></li>
+	      </ul>
+	      <form class="navbar-form navbar-right" role="search">
+	        <div class="form-group input-group">
+	          <input type="text" class="form-control" placeholder="검색..">
+	          <span class="input-group-btn">
+	            <button class="btn btn-default" type="button">
+	              <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	          </span>        
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+			<li><a href="/myEdit"><span class="glyphicon glyphicon-user"></span> 고세민</a></li>
+	        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	  
+	<div class="container text-center">    
+    	<h1>Recommend</h1>
+		<form action="/message" method="post">
+			<div class="form-group">
+		      <textarea class="form-control txt-none font-default" rows="10" id="comment"></textarea>
+		    </div>
+		    <div class="form-group">
+		      	<button type="submit" class="btn btn-success btn-block font-default">저장</button>
+			</div>
+		</form>
+	</div>
+	
+	<footer class="container-fluid text-center">
+	  <p>Copyright ⓒ GooDee Academy. All rights reserved.</p>
+	</footer>
+	
 </body>
 </html>

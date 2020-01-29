@@ -12,6 +12,6 @@ public class IndexController {
 	@Autowired private IndexService indexService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String home() {return "redirect:/res/index.html";}
+	public String home() {return "index";}
 	
 }

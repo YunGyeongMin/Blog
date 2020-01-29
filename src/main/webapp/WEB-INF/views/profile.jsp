@@ -17,5 +17,122 @@
 </head>
 <body>
 	
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="#">GDJ21</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	      	<li><a href="/">Home</a></li>
+	      	<li><a href="/myList">고세민</a></li>
+	      	<li class="active"><a href="#">Profile</a></li>
+	      </ul>
+	      <form class="navbar-form navbar-right" role="search">
+	        <div class="form-group input-group">
+	          <input type="text" class="form-control" placeholder="검색..">
+	          <span class="input-group-btn">
+	            <button class="btn btn-default" type="button">
+	              <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	          </span>        
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+			<li><a href="/myEdit"><span class="glyphicon glyphicon-user"></span> 고세민</a></li>
+	        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	  
+	<div class="container text-center">    
+	  <div class="row">
+	  
+		<div class="col-sm-3 well">
+		  <div class="well">
+	        <img id="myImage" src="/res/img/man.png" class="img-circle cursor-pointer" height="65" width="65" alt="Avatar">
+	      </div>
+	    </div>
+	    
+	    <div class="col-sm-9">
+	    
+			<form class="form-horizontal">
+				<h2>Information</h2>
+				<div class="form-group">
+			    	<label class="control-label col-sm-2" for="name">Name:</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="name" value="고세민" readonly="readonly">
+			    	</div>
+			  	</div>
+				<div class="form-group">
+			    	<label class="control-label col-sm-2" for="email">Email:</label>
+			    	<div class="col-sm-10">
+			      		<input type="email" class="form-control" id="email" value="gsm@goodee.co.kr" readonly="readonly">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label class="control-label col-sm-2" for="phone">Phone Cell:</label>
+			    	<div class="col-sm-10">
+			      		<input type="tel" class="form-control" id="phone" value="010-1234-5678" readonly="readonly">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Password:</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" id="pwd" placeholder="신규 비밀번호를 입력하세요.">
+			    	</div>
+			  	</div>
+			  	<div class="form-group txt-body">
+				  	<h2>Interests</h2>
+				  	<div class="row">
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>Java</h4>
+					        </div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>WebService</h4>
+					        </div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>DataBase</h4>
+					        </div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>HTML</h4>
+					        </div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>CSS</h4>
+					        </div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-3 cursor-pointer">
+							<div class="txt-box txt-active">
+						        <h4>JavaScript</h4>
+					        </div>
+						</div>
+					</div>
+				</div>
+			</form>
+		  
+	    </div>
+	    
+	  </div>
+	</div>
+	<br>
+	<footer class="container-fluid text-center">
+	  <p>Copyright ⓒ GooDee Academy. All rights reserved.</p>
+	</footer>
+	
 </body>
 </html>

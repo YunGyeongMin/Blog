@@ -10,17 +10,21 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 
 @Configuration
 public class MybatisConfig {
 
 	@Bean
 	public DataSource dataSource() throws Exception {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		dataSource.setUrl("jdbc:log4jdbc:mariadb://127.0.0.1:3306/test");
-		dataSource.setUsername("root");
-		dataSource.setPassword("1234");
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+//		dataSource.setUrl("jdbc:log4jdbc:mariadb://127.0.0.1:3306/test");
+//		dataSource.setUsername("root");
+//		dataSource.setPassword("1234");
+		JndiDataSourceLookup jdsl = new JndiDataSourceLookup();
+		jdsl.setResourceRef(true);
+		DataSource dataSource = jdsl.getDataSource("jdbc/team4db");
 		return dataSource;
 	}
 	
