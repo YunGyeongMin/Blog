@@ -14,4 +14,10 @@ public class LoginController {
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login() {return "login";}
 	
+	@RequestMapping(value = "security/success", method = RequestMethod.POST)
+	public String success() {return "redirect:/";}
+	
+	@RequestMapping(value = "security/error", method = RequestMethod.POST)
+	public String error() {return "redirect:/login";}
+	
 }

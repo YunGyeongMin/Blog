@@ -53,7 +53,7 @@
 		<h1 class="text-center">Login</h1>
 		<form action="/login" method="post">
 			<div class="form-group">
-		    	<label class="control-label" for="username">User Name:</label>
+		    	<label class="control-label" for="username">Id:</label>
 		      	<input type="text" class="form-control" id="username" name="username" required="required" placeholder="계정을 입력하세요.">
 		  	</div>
 		  	<div class="form-group">

@@ -52,14 +52,14 @@
 	  
 	<div class="container">    
 		<h1 class="text-center">Sign Up</h1>
-		<form action="/">
+		<form action="/signup" method="post">
 			<div class="form-group">
 		    	<label class="control-label" for="id">Id:</label>
 		      	<input type="text" class="form-control" id="id" name="id" required="required" placeholder="계정을 입력하세요.">
 		  	</div>
 		  	<div class="form-group">
-		    	<label class="control-label" for="pwd">Password:</label>
-		      	<input type="password" class="form-control" id="pwd" name="pwd" required="required" placeholder="비밀번호를 입력하세요.">
+		    	<label class="control-label" for="password">Password:</label>
+		      	<input type="password" class="form-control" id="password" name="password" required="required" placeholder="비밀번호를 입력하세요.">
 		  	</div>		  	
 			
 			<div class="form-group">

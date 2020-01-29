@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+  
+  <insert id="setUser" parameterType="kr.gudi.app.web.login.UserBean">
+  	<selectKey keyProperty="num" resultType="Integer" order="AFTER">
+  		SELECT max(num) AS num FROM t_users
+  	</selectKey>
+  	INSERT INTO t_users 
+  		(`id`, `password`, `name`, `email`, `phone`) 
+    VALUES 
+    	(#{id},#{password},#{name},#{email},#{phone})
+  </insert>
+  
+  <insert id="setAuth" parameterType="kr.gudi.app.web.login.UserBean">
+  	INSERT INTO t_authorities (num) VALUES (#{num})
+  </insert>
+  
+</mapper>

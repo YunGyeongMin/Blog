@@ -18,15 +18,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		    .csrf().disable()
 		    .authorizeRequests()
-//				.antMatchers("/", "/res/**", "/lib/**", "/FileDownload/**", "/FileUpload").permitAll()
+				.antMatchers("/", "/signup", "/res/**", "/lib/**", "/FileDownload/**", "/FileUpload").permitAll()
 //				.antMatchers("/admin").hasAnyRole("ADMIN")
-		    	.anyRequest().permitAll()
-//		    	.anyRequest().authenticated()
+//		    	.anyRequest().permitAll()
+		    	.anyRequest().authenticated()
 				.and()
 			.formLogin()
 				.loginPage("/login")
-//				.successForwardUrl("/security/success")
-//				.failureForwardUrl("/security/error")
+				.successForwardUrl("/security/success")
+				.failureForwardUrl("/security/error")
 				.permitAll()
 				.and()
 			.logout()
@@ -50,10 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //		auth.jdbcAuthentication()
 //          .dataSource(dataSource);
 		
-//		auth.jdbcAuthentication()
-//	        .dataSource(dataSource)
-//	        .usersByUsernameQuery("select num, password, enabled from b_users where email = ?")
-//	        .authoritiesByUsernameQuery("select num, authority from b_authorities where num = ?");
+		auth.jdbcAuthentication()
+	        .dataSource(dataSource)
+	        .usersByUsernameQuery("select num, password, enabled from t_users where id = ?")
+	        .authoritiesByUsernameQuery("select num, authority from t_authorities where num = ?");
 	}
 	
 }
