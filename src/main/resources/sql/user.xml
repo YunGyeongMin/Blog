@@ -18,4 +18,15 @@
   	INSERT INTO t_authorities (num) VALUES (#{num})
   </insert>
   
+  <select id="getUser" parameterType="kr.gudi.app.web.login.UserBean" resultType="kr.gudi.app.web.login.UserBean">
+  	SELECT num, id, password, name, email, phone, img 
+      FROM t_users
+      WHERE 1 = 1
+      <if test="num > 0">
+     	and num = #{num}
+     </if>
+  </select>
+  
+  
+  
 </mapper>

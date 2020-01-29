@@ -42,122 +42,25 @@
 	        </div>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	      
+	      <sec:authorize access="isAnonymous()">
+	      	<li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       		<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </sec:authorize>
+	      
+	      <sec:authorize access="isAuthenticated()">
+	      	<li><a href="/myEdit"><span class="glyphicon glyphicon-user"></span> ${sessionScope.UserInfo.name}</a></li>
+	        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	      </sec:authorize>
+	      
 	      </ul>
 	    </div>
 	  </div>
 	</nav>
 	  
-	<div class="container text-center">    
-		<div class="row">
-		
-		  <div class="col-sm-3 col-xs-6 cursor-pointer" onclick="location.href = '/myList';">
-		    <div class="well">
-		     <p>고세민</p>
-		     <img src="/res/img/java.png" class="img-circle" height="55" width="55" alt="Java">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>김도희</p>
-		     <img src="/res/img/tomcat.png" class="img-circle" height="55" width="55" alt="WebService">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>남재규</p>
-		     <img src="/res/img/mariadb.png" class="img-circle" height="55" width="55" alt="DataBase">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>박성민</p>
-		     <img src="/res/img/javascript.png" class="img-circle" height="55" width="55" alt="JavaScript">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>박성진</p>
-		     <img src="/res/img/tomcat.png" class="img-circle" height="55" width="55" alt="WebService">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>박찬희</p>
-		     <img src="/res/img/mariadb.png" class="img-circle" height="55" width="55" alt="DataBase">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>배종훈</p>
-		     <img src="/res/img/javascript.png" class="img-circle" height="55" width="55" alt="JavaScript">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3 col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>양혜리</p>
-		     <img src="/res/img/java.png" class="img-circle" height="55" width="55" alt="Java">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>윤경민</p>
-		     <img src="/res/img/mariadb.png" class="img-circle" height="55" width="55" alt="DataBase">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>이규철</p>
-		     <img src="/res/img/javascript.png" class="img-circle" height="55" width="55" alt="JavaScript">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3 col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>이해준</p>
-		     <img src="/res/img/java.png" class="img-circle" height="55" width="55" alt="Java">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>장진용</p>
-		     <img src="/res/img/tomcat.png" class="img-circle" height="55" width="55" alt="WebService">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>최재연</p>
-		     <img src="/res/img/javascript.png" class="img-circle" height="55" width="55" alt="JavaScript">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3 col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>한충렬</p>
-		     <img src="/res/img/java.png" class="img-circle" height="55" width="55" alt="Java">
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3  col-xs-6 cursor-pointer">
-		    <div class="well">
-		     <p>홍준호</p>
-		     <img src="/res/img/tomcat.png" class="img-circle" height="55" width="55" alt="WebService">
-		    </div>
-		  </div>
-		  
-		</div>
+	<div class="container text-center">
+	    
+		<div class="row" id="userList"></div>
 	  
     </div>
 	    
