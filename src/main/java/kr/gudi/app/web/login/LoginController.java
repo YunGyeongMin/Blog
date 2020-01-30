@@ -16,13 +16,10 @@ public class LoginController {
 	@Autowired private LoginService loginService;
 	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(HttpSession session) {
-		session.setAttribute("page", "login");
-		return "login";
-	}
+	public String login(HttpSession session) {return "login";}
 	
 	@RequestMapping(value = "security/success", method = RequestMethod.POST)
-	public String success(HttpSession session, @AuthenticationPrincipal UserDetails userDetails, UserBean ub) {
+	public String success(@AuthenticationPrincipal UserDetails userDetails, UserBean ub, HttpSession session) {
 		ub.setNum(Integer.parseInt(userDetails.getUsername()));
 		session.setAttribute("UserInfo", loginService.getUser(ub));
 		return "redirect:/";

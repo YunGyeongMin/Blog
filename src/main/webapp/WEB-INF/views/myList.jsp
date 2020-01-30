@@ -24,8 +24,8 @@
 	  
 		<div class="col-sm-3 well">
 		  <div class="well">
-	        <p><a href="/profile">Profile</a></p>
-	        <img src="/res/img/man.png" class="img-circle" height="65" width="65" alt="Avatar">
+	        <p><a href="/profile/${sessionScope.target.num}">Profile</a></p>
+	        <img src="${sessionScope.target.img}" class="img-circle" height="65" width="65" alt="Avatar">
 	      </div>
 	      <div class="well">
 	        <p><a href="#">Interests</a></p>
@@ -39,7 +39,7 @@
 	        </p>
 	      </div>
 	      <div class="well">
-	        <p><a href="/message">Message</a></p>
+	        <p><a href="/message/${sessionScope.target.num}">Message</a></p>
 	        <p>
 	        	For the loser now<br>
 	        	Will be later to win<br>

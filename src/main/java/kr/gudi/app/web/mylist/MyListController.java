@@ -20,10 +20,6 @@ public class MyListController {
 	public String myList() {return "myList";}
 	
 	@RequestMapping(value = "/{num}", method = RequestMethod.GET)
-	public String myList(@PathVariable("num") int num, HttpSession session) {
-		session.setAttribute("target", myListService.getUser(num));
-		session.setAttribute("page", "myList");
-		return "myList";
-	}
+	public String myList(HttpSession session, @PathVariable("num") int num) {return "myList";}
 	
 }

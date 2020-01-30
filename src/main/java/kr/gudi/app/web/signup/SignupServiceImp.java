@@ -12,7 +12,6 @@ public class SignupServiceImp implements SignupService {
 
 	@Override
 	public boolean setUser(UserBean ub) {
-		System.out.println(ub);
 		return signupDao.setUser(ub);
 	}
 	

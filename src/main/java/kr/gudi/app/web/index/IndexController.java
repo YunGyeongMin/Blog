@@ -22,11 +22,7 @@ public class IndexController {
 	@Autowired private LoginService loginService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String index(HttpSession session) {
-		System.out.println("index");
-		session.setAttribute("page", "index");
-		return "index";
-	}
+	public String index(HttpSession session) {return "index";}
 	
 	@RequestMapping(value = "page", method = RequestMethod.POST)
 	public String page(Model model) {

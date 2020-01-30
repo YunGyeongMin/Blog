@@ -16,14 +16,10 @@ public class SignupController {
 	@Autowired private SignupService signupService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String signup(HttpSession session) {
-		session.setAttribute("page", "signup");
-		return "signup";
-	}
+	public String signup(HttpSession session) {return "signup";}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String signup(UserBean ub) {
-		System.out.println(ub);
 		signupService.setUser(ub);
 		return "redirect:/login";
 	}
