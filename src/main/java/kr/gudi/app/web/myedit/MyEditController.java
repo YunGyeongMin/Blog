@@ -14,7 +14,7 @@ public class MyEditController {
 	@Autowired private MyEditService myeditService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String login(HttpSession session) {
+	public String myEdit(HttpSession session) {
 		session.setAttribute("page", "myEdit");
 		return "myEdit";
 	}

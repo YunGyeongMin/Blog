@@ -14,7 +14,7 @@ public class ProfileController {
 	@Autowired private ProfileService profileService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String login(HttpSession session) {
+	public String profile(HttpSession session) {
 		session.setAttribute("page", "profile");
 		return "profile";
 	}

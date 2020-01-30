@@ -2,6 +2,7 @@ package kr.gudi.app.web.index;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,8 @@ public class IndexController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String index(HttpSession session) {
-		session.setAttribute("page", "");
+		System.out.println("index");
+		session.setAttribute("page", "index");
 		return "index";
 	}
 	

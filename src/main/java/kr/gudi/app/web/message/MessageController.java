@@ -14,7 +14,7 @@ public class MessageController {
 	@Autowired private MessageService messageService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String login(HttpSession session) {
+	public String message(HttpSession session) {
 		session.setAttribute("page", "message");
 		return "message";
 	}
