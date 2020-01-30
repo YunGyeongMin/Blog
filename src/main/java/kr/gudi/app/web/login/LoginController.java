@@ -16,7 +16,10 @@ public class LoginController {
 	@Autowired private LoginService loginService;
 	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login() {return "login";}
+	public String login(HttpSession session) {
+		session.setAttribute("page", "login");
+		return "login";
+	}
 	
 	@RequestMapping(value = "security/success", method = RequestMethod.POST)
 	public String success(HttpSession session, @AuthenticationPrincipal UserDetails userDetails, UserBean ub) {
