@@ -27,6 +27,11 @@
      </if>
   </select>
   
-  
+  <insert id="setMessage" parameterType="kr.gudi.app.web.message.MessageBean">
+  	INSERT INTO t_message 
+  		(`regUser`, `targetUser`, `comment`) 
+  	VALUES 
+  		(#{regUser},#{targetUser},#{comment})
+  </insert>
   
 </mapper>

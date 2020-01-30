@@ -38,13 +38,13 @@ public class WorkFlowAOP {
 	@Pointcut("execution(* kr.gudi.app.web.signup.SignupController.signup(..))")
 	public void signup() {}
 	
-	@Around("index() || login() || message() || profile() || signup()")
+	@Around("index() || login() || profile() || signup()")
 	public Object s(ProceedingJoinPoint jp) throws Throwable {
 		setPage(jp);
 		return jp.proceed();
 	}
 	
-	@Around("myList() || myEdit()")
+	@Around("myList() || myEdit() || message()")
 	public Object target(ProceedingJoinPoint jp) throws Throwable {
 		setPage(jp);
 		Object[] args = jp.getArgs();

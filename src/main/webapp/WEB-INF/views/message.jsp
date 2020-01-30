@@ -21,7 +21,7 @@
 	  
 	<div class="container text-center">    
     	<h1>Recommend</h1>
-		<form action="/message" method="post">
+		<form id="message">
 			<div class="form-group">
 		      <textarea class="form-control txt-none font-default" rows="10" id="comment"></textarea>
 		    </div>

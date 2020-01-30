@@ -31,3 +31,16 @@ SELECT * FROM t_authorities;
 
 
 SELECT max(num) AS num FROM t_users;
+
+
+CREATE TABLE t_message (
+	`num` 	 	INT NOT NULL AUTO_INCREMENT,
+	`regUser` 	INT NOT NULL,
+	`targetUser` INT NOT NULL,
+	`comment`	VARCHAR(255) NULL,
+	`delYn`		VARCHAR(1) NOT NULL DEFAULT 'N',
+	`regDate`	datetime NOT NULL DEFAULT NOW(),
+	PRIMARY KEY (`num`)
+);
+
+INSERT INTO t_message (`regUser`, `targetUser`, `comment`) VALUES (#{regUser},#{targetUser},#{comment});

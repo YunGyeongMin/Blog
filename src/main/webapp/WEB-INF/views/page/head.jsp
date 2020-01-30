@@ -16,7 +16,7 @@
 	      <a class="navbar-brand" href="/">GDJ21</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
+	      <ul class="nav navbar-nav nav-list">
 	      
 			<c:choose>
 				<c:when test="${sessionScope.page eq 'login'}">
