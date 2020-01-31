@@ -2,13 +2,13 @@ package kr.gudi.app.web.login;
 
 public class UserBean {
 	
-	int num;
-	String id;
-	String password;
-	String name;
-	String email;
-	String phone;
-	String img;
+	private int num;
+	private String id;
+	private String password;
+	private String name;
+	private String email;
+	private String phone;
+	private String img;
 	
 	public int getNum() {
 		return num;

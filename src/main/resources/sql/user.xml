@@ -34,4 +34,16 @@
   		(#{regUser},#{targetUser},#{comment})
   </insert>
   
+  <select id="getMessage" parameterType="kr.gudi.app.web.login.UserBean" resultType="kr.gudi.app.web.message.MessageBean">
+  	SELECT a.num,
+	       a.comment,
+	       b.name,
+	       b.img
+	  FROM t_message AS a
+	 INNER JOIN t_users AS b
+	  ON (a.regUser = b.num)
+	 WHERE a.targetUser = #{num}
+	 ORDER BY a.num desc
+  </select>
+  
 </mapper>

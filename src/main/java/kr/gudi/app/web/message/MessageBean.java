@@ -6,6 +6,8 @@ public class MessageBean {
 	int regUser;
 	int targetUser;
 	String comment;
+	String name;
+	String img;
 	
 	public int getNum() {
 		return num;
@@ -31,10 +33,22 @@ public class MessageBean {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	@Override
 	public String toString() {
 		return "MessageBean [num=" + num + ", regUser=" + regUser + ", targetUser=" + targetUser + ", comment="
-				+ comment + "]";
+				+ comment + ", name=" + name + ", img=" + img + "]";
 	}
 
 }

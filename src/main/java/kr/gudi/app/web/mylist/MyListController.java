@@ -1,6 +1,5 @@
 package kr.gudi.app.web.mylist;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +20,11 @@ public class MyListController {
 	
 	@RequestMapping(value = "/{num}", method = RequestMethod.GET)
 	public String myList(HttpSession session, @PathVariable("num") int num) {return "myList";}
+	
+	@RequestMapping(value = "/page", method = RequestMethod.POST)
+	public String page(HttpSession session, Model model) {
+		model.addAttribute("result", myListService.getMessage(session));
+		return "page/myList";
+	}
 	
 }
