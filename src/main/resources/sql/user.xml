@@ -46,4 +46,8 @@
 	 ORDER BY a.num desc
   </select>
   
+  <select id="getInterests" resultType="kr.gudi.app.web.myedit.InterestsBean">
+  	SELECT num, interest_name as name FROM v_interests
+  </select>
+  
 </mapper>

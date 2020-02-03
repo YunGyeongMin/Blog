@@ -44,3 +44,33 @@ CREATE TABLE t_message (
 );
 
 INSERT INTO t_message (`regUser`, `targetUser`, `comment`) VALUES (#{regUser},#{targetUser},#{comment});
+
+
+CREATE TABLE t_interests (
+	u_num INT,
+	v_num INT
+);
+
+SELECT num, interest_name as name FROM v_interests;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

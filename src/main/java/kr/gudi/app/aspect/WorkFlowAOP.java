@@ -9,7 +9,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import kr.gudi.app.web.login.UserBean;
 import kr.gudi.app.web.mylist.MyListService;
 
 @Aspect
@@ -66,13 +65,11 @@ public class WorkFlowAOP {
 	
 	private void setPage(ProceedingJoinPoint jp) {
 		String target = jp.getSignature().toShortString();
-//		System.out.println(target);
 		String name = target.substring(target.indexOf(".") + 1, target.indexOf("("));
 		Object[] args = jp.getArgs();
 		if(args.length > 0) {
 			Object obj = args[0];
 			if(obj instanceof HttpSession) {
-//				System.out.println("데이터 담기 : " + name);
 				HttpSession session = (HttpSession) obj;
 				session.setAttribute("page", name);
 			}

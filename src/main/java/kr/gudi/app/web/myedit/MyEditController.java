@@ -1,5 +1,7 @@
 package kr.gudi.app.web.myedit;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/myEdit")
@@ -15,7 +18,12 @@ public class MyEditController {
 	
 	@Autowired private MyEditService myeditService;
 	
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public String myEdit(HttpSession session, @AuthenticationPrincipal UserDetails userDetails) {return "myEdit";}
+	
+	@RequestMapping(value="", method=RequestMethod.POST)
+	public @ResponseBody List<InterestsBean> getInterests(){
+		return myeditService.getInterests();
+	}
 	
 }
