@@ -53,8 +53,20 @@ CREATE TABLE t_interests (
 
 SELECT num, interest_name as name FROM v_interests;
 
+INSERT INTO t_interests VALUES (#{u_num}, #{v_num});
 
+DELETE FROM t_interests WHERE u_num = #{u_num};
 
+SELECT v.*, 
+		 case when t.u_num IS NOT NULL then true
+		      ELSE false
+		 END AS state
+  FROM v_interests AS v
+  LEFT OUTER JOIN t_interests AS t
+  ON (v.num = t.v_num AND t.u_num = 1)
+ORDER BY v.num;
+  
+  #{u_num});
 
 
 

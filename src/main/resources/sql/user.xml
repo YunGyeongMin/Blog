@@ -46,8 +46,23 @@
 	 ORDER BY a.num desc
   </select>
   
-  <select id="getInterests" resultType="kr.gudi.app.web.myedit.InterestsBean">
-  	SELECT num, interest_name as name FROM v_interests
+  <select id="getInterests" parameterType="Map" resultType="kr.gudi.app.web.myedit.InterestsBean">
+  	SELECT v.num, v.interest_name as name, 
+		   case when t.u_num IS NOT NULL then true
+			    ELSE false
+		   END AS state
+	  FROM v_interests AS v
+	  LEFT OUTER JOIN t_interests AS t
+	  ON (v.num = t.v_num AND t.u_num = #{num})
+	ORDER BY v.num
   </select>
+  
+  <insert id="setInterests" parameterType="Map">
+  	INSERT INTO t_interests VALUES (#{u_num}, #{v_num})
+  </insert>
+  
+  <delete id="resetInterests" parameterType="Map">
+  	DELETE FROM t_interests WHERE u_num = #{u_num}
+  </delete>
   
 </mapper>

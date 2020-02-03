@@ -29,8 +29,13 @@
 	    </div>
 	    
 	    <div class="col-sm-9">
-			<form class="form-horizontal">
+			<form class="form-horizontal" id="info">
 				<h2>Information</h2>
+				<div class="form-group">
+			    	<div class="col-sm-10">
+			      		<input type="hidden" class="form-control" id="num" value="${sessionScope.target.num}">
+			    	</div>
+			  	</div>
 				<div class="form-group">
 			    	<label class="control-label col-sm-2" for="name">Name:</label>
 			    	<div class="col-sm-10">
