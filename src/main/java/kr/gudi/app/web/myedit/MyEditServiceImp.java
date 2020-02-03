@@ -21,20 +21,26 @@ public class MyEditServiceImp implements MyEditService {
 
 	@Override
 	public boolean setInterests(Map<String, Object> paramMap) {
-		Object obj = paramMap.get("Interests");
-		JSONArray ja = JSONArray.fromObject(obj);
-		int cnt = 0;
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("u_num", paramMap.get("num"));
-		myeditDao.resetInterests(params);
 		
-		for(int i = 0; i < ja.size(); i++) {
-			params.put("v_num", ja.get(i));
-			cnt += myeditDao.setInterests(params);
+		int state = myeditDao.upUser(paramMap);
+		
+		if(state > 0) {
+			Object obj = paramMap.get("Interests");
+			JSONArray ja = JSONArray.fromObject(obj);
+			int cnt = 0;
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("u_num", paramMap.get("num"));
+			myeditDao.resetInterests(params);
+			
+			for(int i = 0; i < ja.size(); i++) {
+				params.put("v_num", ja.get(i));
+				cnt += myeditDao.setInterests(params);
+			}
+			if(cnt == ja.size()) {
+				return true;
+			}
 		}
-		if(cnt == ja.size()) {
-			return true;
-		}
+		
 		return false;
 	}
 	

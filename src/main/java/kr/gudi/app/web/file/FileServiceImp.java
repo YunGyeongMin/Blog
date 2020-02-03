@@ -44,12 +44,15 @@ public class FileServiceImp implements FileService {
 	public Map<String, Object> fileUpload(HttpSession session, MultipartFile[] files) {
 		resultMap = new HashMap<String, Object>();
 		List<Map<String, Object>> fileList = new ArrayList<Map<String, Object>>();
+		
 		Object oUser = session.getAttribute("info");
 		if(oUser != null) {
 			Map<String, Object> userMap = (Map<String, Object>) oUser;
+			
 			for(int i = 0; i < files.length; i++) {
 				Map<String, Object> fileMap = new HashMap<String, Object>();
 				String path = session.getServletContext().getRealPath("res/upload/" + userMap.get("Num") + "/" + (i + 1) + ".png");
+				
 				MultipartFile file = files[i];
 				try {
 					FileUtils.copyInputStreamToFile(file.getInputStream(), new File(path));

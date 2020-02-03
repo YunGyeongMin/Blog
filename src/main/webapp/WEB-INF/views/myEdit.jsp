@@ -24,7 +24,7 @@
 	  
 		<div class="col-sm-3 well">
 		  <div class="well">
-	        <img id="myImage" src="/res/img/man.png" class="img-circle cursor-pointer" height="65" width="65" alt="Avatar" data-toggle="modal" data-target="#modal">
+	        <img id="myImage" src="${sessionScope.target.img}" class="img-circle cursor-pointer" height="65" width="65" alt="Avatar" data-toggle="modal" data-target="#modal">
 	      </div>
 	    </div>
 	    
@@ -39,19 +39,19 @@
 				<div class="form-group">
 			    	<label class="control-label col-sm-2" for="name">Name:</label>
 			    	<div class="col-sm-10">
-			      		<input type="text" class="form-control" id="name" value="고세민" required="required">
+			      		<input type="text" class="form-control" id="name" value="${sessionScope.target.name}" required="required">
 			    	</div>
 			  	</div>
 				<div class="form-group">
 			    	<label class="control-label col-sm-2" for="email">Email:</label>
 			    	<div class="col-sm-10">
-			      		<input type="email" class="form-control" id="email" value="gsm@goodee.co.kr" required="required">
+			      		<input type="email" class="form-control" id="email" value="${sessionScope.target.email}" required="required">
 			    	</div>
 			  	</div>
 			  	<div class="form-group">
 			    	<label class="control-label col-sm-2" for="phone">Phone Cell:</label>
 			    	<div class="col-sm-10">
-			      		<input type="tel" class="form-control" id="phone" value="010-1234-5678">
+			      		<input type="tel" class="form-control" id="phone" value="${sessionScope.target.phone}">
 			    	</div>
 			  	</div>
 			  	<div class="form-group">
@@ -90,7 +90,7 @@
 	      <div class="modal-body">
 	        <form>
 	        	<div class="form-group text-center">
-	        		<img id="preview" src="/res/img/man.png" alt="your image" class="img-circle cursor-pointer" height="65" width="65"/>
+	        		<img id="preview" src="${sessionScope.target.img}" alt="your image" class="img-circle cursor-pointer" height="65" width="65"/>
 	        	</div>
 	        </form>
 	      </div>

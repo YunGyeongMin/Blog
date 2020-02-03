@@ -65,4 +65,15 @@
   	DELETE FROM t_interests WHERE u_num = #{u_num}
   </delete>
   
+  <update id="upUser" parameterType="Map">
+		UPDATE t_users SET 
+		`name`     = #{name},
+		`email`    = #{email},
+		`phone`    = #{phone}
+		<if test="pwd != null">
+			, `password` = #{pwd}
+		</if>
+		WHERE num = #{num}  
+  </update>
+  
 </mapper>

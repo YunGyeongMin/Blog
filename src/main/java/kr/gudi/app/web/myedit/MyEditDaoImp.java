@@ -26,5 +26,10 @@ public class MyEditDaoImp implements MyEditDao {
 	public int resetInterests(Map<String, Object> paramMap) {
 		return session.delete("user.resetInterests", paramMap);
 	}
+
+	@Override
+	public int upUser(Map<String, Object> paramMap) {
+		return session.update("user.upUser", paramMap);
+	}
 	
 }

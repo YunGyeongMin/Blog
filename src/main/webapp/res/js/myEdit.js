@@ -4,8 +4,16 @@ $(document).ready(function(){
 		e.preventDefault();
 		var params = {
 				num : $("#num").val(),
+				name : $("#name").val(),
+				email : $("#email").val(),
+				phone : $("#phone").val(),
 				Interests : resource
 		};
+		
+		if($("#pwd").val() != "") {
+			params.pwd = $("#pwd").val();
+		}
+		
 		$.ajax({
 			type : "put",
 			url : "/myEdit",
@@ -31,10 +39,8 @@ $(document).ready(function(){
 			url: "/myEdit",
 			data: params
 		}).done(function(d) {
-			console.log(d);
 			$("#Interests").empty();
 			for(var i = 0; i < d.length; i ++){
-//				console.log(d[i].num, d[i].name);
 				var css = d[i].state?"txt-active":"";
 				if(d[i].state) {
 					resource[resource.length] = d[i].num;
