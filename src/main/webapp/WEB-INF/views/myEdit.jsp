@@ -95,7 +95,7 @@
 	        </form>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-primary btn-block font-default" data-dismiss="modal">적용</button>
+	        <button type="button" class="btn btn-primary btn-block font-default" id="save">적용</button>
 	      </div>
 	    </div>
 	

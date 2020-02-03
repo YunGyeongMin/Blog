@@ -76,4 +76,10 @@
 		WHERE num = #{num}  
   </update>
   
+  <update id="upImage" parameterType="kr.gudi.app.web.login.UserBean">
+  		UPDATE t_users SET
+  		`img` = #{img}
+  		WHERE num = #{num} 
+  </update>
+  
 </mapper>

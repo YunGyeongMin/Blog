@@ -1,6 +1,5 @@
 package kr.gudi.app.web.myedit;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/myEdit")
@@ -30,7 +30,6 @@ public class MyEditController {
 	public @ResponseBody List<InterestsBean> getInterests(@RequestParam Map<String, Object> paramMap){
 		System.out.println(paramMap);
 		return myeditService.getInterests(paramMap);
-//		return new ArrayList<InterestsBean>();
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.PUT)
@@ -38,6 +37,11 @@ public class MyEditController {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("result", myeditService.setInterests(paramMap));
 		return resultMap;
+	}
+	
+	@RequestMapping(value="/upImage", method=RequestMethod.POST)
+	public @ResponseBody boolean upImage(@RequestParam("file") MultipartFile file, HttpSession session){
+		return myeditService.upImage(file, session);
 	}
 	
 }

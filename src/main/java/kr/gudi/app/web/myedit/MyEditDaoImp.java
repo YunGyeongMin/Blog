@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.gudi.app.web.login.UserBean;
+
 @Repository
 public class MyEditDaoImp implements MyEditDao {
 	
@@ -30,6 +32,11 @@ public class MyEditDaoImp implements MyEditDao {
 	@Override
 	public int upUser(Map<String, Object> paramMap) {
 		return session.update("user.upUser", paramMap);
+	}
+
+	@Override
+	public int upImage(UserBean ub) {
+		return session.update("user.upImage", ub);
 	}
 	
 }

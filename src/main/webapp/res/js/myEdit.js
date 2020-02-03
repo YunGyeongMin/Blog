@@ -1,5 +1,44 @@
 $(document).ready(function(){
 	
+	var input = document.createElement("INPUT");
+	input.setAttribute("type", "file");
+	input.onchange = function(e){
+		var r = new FileReader();
+		r.onload = function(t) {
+			$("#preview").attr("src", t.target.result);
+		}
+		r.readAsDataURL(e.target.files[0]);
+	};
+	
+	$("#preview").click(function(){
+		input.click();
+	});
+	
+	$("#save").click(function(){
+		if(input.files.length > 0){
+			console.log("선택 파일 있음!");
+			
+			var form = new FormData();
+			form.append("file", input.files[0]);
+			
+			$.ajax({
+				type: "post",
+				url: "/myEdit/upImage",
+				enctype:"multipart/form-data",
+				processData: false,
+				contentType: false,
+				cache: false,
+				data: form
+			}).done(function(d){
+				console.log(d);
+				if(d){
+					$("#myImage").attr("src", $("#preview").attr("src"));
+				}
+			});
+		}
+		$("#modal").modal("hide");
+	});
+	
 	$("#info").submit(function(e){
 		e.preventDefault();
 		var params = {

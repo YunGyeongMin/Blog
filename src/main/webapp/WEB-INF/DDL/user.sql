@@ -66,7 +66,14 @@ SELECT v.*,
   ON (v.num = t.v_num AND t.u_num = 1)
 ORDER BY v.num;
   
-  #{u_num});
+SELECT * FROM t_users;  
+  
+UPDATE t_users SET 
+`name`     = #{name},
+`email`    = #{email},
+`phone`    = #{phone},
+`password` = #{pwd}
+WHERE num = #{num};
 
 
 
